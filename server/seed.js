@@ -39,7 +39,7 @@ const quizzes = [
 
 (async () => {
   await mongoose.connect(process.env.MONGO_URI);
-  await Quiz.deleteMany({});
+
   await Quiz.insertMany(quizzes);
   console.log(`Seeded ${quizzes.length} quizzes`);
   await mongoose.disconnect();
